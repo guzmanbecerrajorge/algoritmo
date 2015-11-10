@@ -1,0 +1,73 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+#define fil 10
+#define col 10
+
+struct t_diagonal
+{int mat[fil][fil];
+};
+
+void cargar(t_diagonal M[fil][fil], int n);
+void mostrar(t_diagonal M[fil][fil], int n);
+float sumadiagonales(t_diagonal M[fil][fil], int n);
+
+void main()
+{int n;
+t_diagonal M[fil][fil];
+	do
+	{
+		cout<<"Ingrese tamaño de matriz NXN: ";
+		cin>>n;
+	}
+	while((n<0)||(n>fil));
+	cargar(M,n);
+	mostrar(M,n);
+	cout<<"La suma es: "<<sumadiagonales(M,n);
+	getch();
+}
+
+void cargar(t_diagonal M[fil][fil], int n)
+{int i,j,k,l;
+	for(i=0;i<n;i++)
+		{for(j=0;j<n;j++)
+			{for(k=0;k<n;k++)
+				{for(l=0;l<n;l++)
+					{	do
+							{	
+							cout<<"Ingrese valor ["<<i<<"]["<<j<<"]["<<k<<"]["<<l<<"]: ";
+							cin>>M[i][j].mat[k][l];
+							}while(M[i][j].mat[k][l]<=0 || M[i][j].mat[k][l]>=100);
+					}
+				}
+			}
+		}
+}
+ 
+void mostrar(t_diagonal M[fil][fil], int n)
+{int i, j,k,l;
+	for(i=0;i<n;i++)
+		{for(j=0;j<n;j++)
+			{for(k=0;k<n;k++)
+				{for(l=0;l<n;l++)
+					{cout<<M[i][j].mat[k][l]<<" ";
+					}cout<<endl;
+				}cout<<endl;
+			}cout<<endl;
+		}cout<<endl;
+}
+
+float sumadiagonales(t_diagonal M[fil][fil], int n)
+{int i,k;
+ float sum=0,suma;
+	for(i=0;i<n;i++)
+	   {suma=0;
+		for(k=0;k<n;k++)
+		    suma=suma+M[i][i].mat[k][k]; 
+	     cout<<"Lasuma de la diagonal es : "<<suma;
+	   	 sum=sum+suma;
+	   }
+	return sum;
