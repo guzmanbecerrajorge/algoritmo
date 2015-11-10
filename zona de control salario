@@ -1,0 +1,36 @@
++#include "stdafx.h"
++#include <iostream>
++#include "conio.h"
++
++
++using namespace std;
++
++void main()
++{float sb,promedio,sn,suma=0,iva=0.13,afp=0.121;
++int i=0,sm=1420;
++
++	cout<<"ingrese el salario bruto//ingrese -999 para terminar:";
++    cin>>sb;
++	while(sb!=-999)
++	{if(sb<2*sm)
++	  {sb=sb-(sb*afp);
++	   suma=suma+sb;
++	  }
++	   else
++	   {if((sb>2*sm)&&(sb<15000))
++	     {sb=sb-(sb*afp)-(sb*iva);
++	      suma=suma+sb;
++	     }
++	      else
++		  {sb=sb-(sb*afp)-(sb*iva)-(sb*0.01);
++	       suma=suma+sb;
++	      }
++	   }
++	  i++;
++	  cout<<"ingrese el salario bruto//ingrese -999para terminar:";
++	  cin>>sb;
++	}
++	promedio=suma/i;
++	cout<<"el promedio del salario es:"<<promedio;
++	getch();
++}
