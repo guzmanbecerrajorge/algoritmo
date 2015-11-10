@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define IVA 0.13
+#define AFP 0.121
+#define sm 1420
+
+using namespace std;
+
+void main()
+{float sb,sn,suma,promedio;
+int i;
+suma=0;
+i=0;
+cout<<"Ingrese el salario bruto del empleado:";
+cin>>sb;
+while(sb!=-999)
+{if(sb<(2*sm))
+{sn=(sb-(sb*AFP));}
+if(sb>=(2*sm))
+{sn=sb-(sb*IVA+sb*AFP);}
+if(sb>=15000)
+{sn=sb-(sb*(AFP+0.01)+sb*IVA);}
+suma=suma+sn;
+i++;
+cout<<"Ingrese el salario bruto del empleado:";
+cin>>sb;
+}
+promedio=suma/i;
+cout<<"El promedio de los salarios netos es:"<<promedio;
+getch();
+}
