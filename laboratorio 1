@@ -1,0 +1,49 @@
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{float base ,altura,promedio,a,b,c,d,e,area;
+int op;
+do{
+	cout<<"1.-area del triangulo\n";
+	cout<<"2.-promedio de 3 numeros\n";
+	cout<<"3.-mayor de dos numeros\n";
+	cout<<"4.-salir";
+	cin>>op;
+	switch(op)
+	{case 1 :cout<<"ingrese la base del triangulo:";
+	         cin>>base;
+			 cout<<"ingrese la altura del triangulo:";
+			 cin>>altura;
+			 area=(base*altura)/2;
+             cout<<"el area del triangulo es:"<<area;
+			 break;
+	case 2:cout<<"ingrese el primer numero:";
+		   cin>>a;
+		   cout<<"ingrese el segundo numero:";
+		   cin>>b;
+		   cout<<"ingrese el tercer numero:";
+		   cin>>c;
+		    promedio=(a+b+c)/3;
+			cout<<"el promedio es :"<<promedio;
+			break;
+	case 3:cout<<"ingresar primer valor:";
+		   cin>>d;
+		   cout<<"ingresar segundo numero:";
+		   cin>>e;
+		     if(a>b)
+			 cout<<"el numero"<<d<<"es mayor"<<e<<"\n";
+			   else 
+			   cout<<"el numero"<<e<<"es mayor"<<d<<"\n";
+			 break;
+	case 0:cout<<"salir:";
+		break;
+	default:cout<<"error invalida:";
+	}
+	getch();
+	system("cls");
+}while(op!=0);
+ getch();
+}
