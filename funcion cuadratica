@@ -1,0 +1,58 @@
+#include "stdafx.h"
+#include <iostream>
+#include"conio.h"
+#include "math.h"
+using namespace std;
+void cuadratica(float a,float b,float c, float&x1,float&x2);
+void unica(float a,float b,float c, float&x1,float &x2);
+void imaginaria(float a,float b,float c, float&x1,float&x2);
+
+void main()
+{float a,b,c,comp=0,x1,x2;
+ cout<<"ingrese el valor de a:";
+ cin>>a;
+ cout<<"ingrese el valor de b:";
+ cin>>b;
+ cout<<"ingrese el valor de c:";
+ cin>>c;
+  comp=b*b-4*a*c;
+    
+   if(comp>0)
+   {cuadratica(a,b,c,x1,x2);
+   cout<<"mostrar el resultado de "<<x1;
+   cout<<"mostrar el resultado de "<<x2;
+   }
+   if(comp==0)
+   {unica(a,b,c,x1,x2);
+   cout<<"la solucion es unica: "<<x1;
+  
+   }
+   if(comp<0)
+   {imaginaria(a,b,c,x1,x2);
+   cout<<"el resultado imaginario es "<<x1<<"i"<<endl;
+   cout<<"el resultado imaginario es "<<x2<<"i"<<endl;
+
+  
+    
+}
+   getch();
+}
+
+void cuadratica(float a , float b , float c , float &x1 , float&x2 )
+{
+	x1=((-b+sqrt(b*b-4*a*c))/2*a);
+    x2=((-b-sqrt(b*b-4*a*c))/2*a);
+} 
+
+void unica(float a,float b,float c, float&x1,float &x2 )
+
+{
+	x1=((b)/(2*a));
+	x2=((b)/(2*a));
+}
+
+void imaginaria(float a,float b,float c, float&x1,float&x2)
+{
+	x1=(-b+sqrt(-(b*b-4*a*c)))/(2*a);
+    x2=(-b-sqrt(-(b*b-4*a*c)))/(2*a);
+}
