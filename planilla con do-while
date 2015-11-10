@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define iva .13
+#define afp .121
+#define afpm .131
+#define sm 1420
+
+using namespace std;
+
+void main(){
+char op;
+float sb,sn,suma=0,prom;
+int i=0;
+do{
+cout<<"ingrese el sueldo del empleado: ";
+cin>>sb;
+if(sb<2*sm)
+	sn=sb-sb*afp;
+if((sb>=2*sm)&&(sb<15000))
+	sn=sb-(sb*afp+sb*iva);
+if(sb>=15000)
+	sn=sb-(sb*afpm+sb*iva);
+suma=suma+sn;
+i++;
+cout<<"desea continuar ?((**s**)) :";
+cin>>op;
+}while(op=='s');
+prom=suma/i;
+cout<<"promedio es:" <<prom;
+getch();
+
+}
