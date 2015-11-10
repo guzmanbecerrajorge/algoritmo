@@ -1,0 +1,29 @@
+#include <iostream>
+#include "conio.h"
+#define iva 0.13
+#define afp 0.121
+#define sm 1500
+
+using namespace std;
+
+void main()
+{int n,i;
+float sb,suma,p;
+p=0;
+suma=0;
+i=0;
+cout<<"ingrese el numero de empleados:";
+cin>>n;
+while(i<n)
+{cout<<"ingrese el salario bruto del numero de empleados"<<(i+1)<<":";
+cin>>sb;
+if(sb>=(sm*2))
+   sb=sb-(sb*iva);
+   sb=sb-(sb*afp);
+   suma=suma+sb;
+   p=suma/n;
+   i++;
+}
+cout<<"el salario promedio es:"<<p;
+getch();
+}
